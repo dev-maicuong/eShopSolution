@@ -1,4 +1,4 @@
-# ASP.NET Core 3.1 project from Tedu
+# ASP.NET Core 3.1 project
 ## Technologies
 - ASP.NET Core 3.1
 - Entity Framework core 3.1
