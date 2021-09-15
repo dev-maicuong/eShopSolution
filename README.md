@@ -6,6 +6,10 @@
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Design
 - Microsoft.EntityFrameworkCore.Tools
+
+eShopSolution.Data
+- Microsoft.Extensions.Configuration.FileExtensions
+- Microsoft.Extensions.Configuration.Json
 ## Youtube tutorial
 ## How to configura and run
 ## How to contribute
