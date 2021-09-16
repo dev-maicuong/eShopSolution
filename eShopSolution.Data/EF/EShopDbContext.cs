@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using eShopSolution.Data.Entities;
 using eShopSolution.Data.Configurations;
+using eShopSolution.Data.Extensions;
 
 namespace eShopSolution.Data.EF
 {
@@ -15,6 +16,7 @@ namespace eShopSolution.Data.EF
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // configure using fluent api
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -30,13 +32,9 @@ namespace eShopSolution.Data.EF
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
             modelBuilder.ApplyConfiguration(new CartConfiguration());
 
-
-            //base.OnModelCreating(modelBuilder);
+            // data seeding
+            modelBuilder.Seed();
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
-        //}
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AppConfig> AppConfigs { get; set; }
